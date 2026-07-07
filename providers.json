@@ -1,0 +1,42 @@
+[
+  {
+    "n": "Tokopedia",
+    "url": "https://accounts.tokopedia.com/otp/cod",
+    "method": "POST",
+    "headers": {
+      "User-Agent": "Tokopedia/3.104.1 (Android 13)",
+      "Content-Type": "application/json"
+    },
+    "payload": {"msisdn": "{phone}", "smsType": "1"},
+    "phone_key": "msisdn",
+    "success": "otp",
+    "timeout": 15
+  },
+  {
+    "n": "Shopee",
+    "url": "https://shopee.co.id/api/v4/account/otp/send",
+    "method": "POST",
+    "headers": {
+      "User-Agent": "Shopee/3.18.0 (Android 13)",
+      "Content-Type": "application/json",
+      "x-api-source": "rn"
+    },
+    "payload": {"phone_number": "{phone}", "channel": "sms", "action": "login"},
+    "phone_key": "phone_number",
+    "success": "errcode",
+    "timeout": 15
+  },
+  {
+    "n": "Halodoc",
+    "url": "https://customers.api.halodoc.com/v1/users/otp",
+    "method": "POST",
+    "headers": {
+      "User-Agent": "Halodoc/7.2.0 (Android 13)",
+      "Content-Type": "application/json"
+    },
+    "payload": {"phone_number": "{phone}", "purpose": "register"},
+    "phone_key": "phone_number",
+    "success": "otp_sent",
+    "timeout": 15
+  }
+]
